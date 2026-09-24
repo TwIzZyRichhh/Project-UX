@@ -1,4 +1,5 @@
 # Project-UX
+
 Projektin tarkoituksena on suunnitella Wolt-tyylinen robottitoimitussovellus, jossa asiakas
 voi tilata ruokaa lähialueen ravintoloista ja saada tilauksen toimitettuna autonomisella
 robotilla. Sovellus on suunnattu erityisesti henkilöille, jotka asuvat suhteellisen lähellä
@@ -12,3 +13,9 @@ lounaan läheisestä ravintolasta poistumatta työpisteeltään. Ravintola valmi
 jonka jälkeen robotti noutaa sen ja kuljettaa asiakkaalle.
 
 - Voidaan tehdä myös mergenä main branchiin
+
+- Kun tiimin jäsen aloittaa uuden tehtävän, hän luo main-haarasta oman erillisen haaran.
+  Jokaisen haaran tulee liittyä yhteen tiettyyn tehtävään, ominaisuuteen tai virheen
+  korjaukseen. Haarojen nimien tulee olla lyhyitä ja kuvaavia. Esimerkiksi
+  feature/user-login, feature/payment-page tai fix/login-error kertovat
+  selkeästi, mitä kyseisessä haarassa tehdään.
