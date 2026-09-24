@@ -10,3 +10,5 @@ kustannustehokas.
 Yksi tärkeä kohderyhmä ovat etätyöntekijät. Etätöissä oleva henkilö voi esimerkiksi tilata
 lounaan läheisestä ravintolasta poistumatta työpisteeltään. Ravintola valmistaa tilauksen,
 jonka jälkeen robotti noutaa sen ja kuljettaa asiakkaalle.
+
+- Voidaan tehdä myös mergenä main branchiin
