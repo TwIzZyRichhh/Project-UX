@@ -25,7 +25,7 @@ CREATE TABLE food
 CREATE TABLE menu
 (
   menu_id INT NOT NULL,
-  menu_description INT NOT NULL,
+  menu_description VARCHAR(50) NOT NULL,
   food_id INT NOT NULL,
   restaurant_id INT NOT NULL,
   FOREIGN KEY (food_id) REFERENCES food(food_id),
