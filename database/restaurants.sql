@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS ProjectDB;
+CREATE DATABASE ProjectDB;
+USE ProjectDB;
+
 CREATE TABLE restaurants
 (
   restaurant_id INT NOT NULL,
