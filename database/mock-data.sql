@@ -1,7 +1,7 @@
-INSERT INTO `user` (user_name, user_email, user_role, user_address) VALUES
-('Aino Virtanen',  'aino.virtanen@example.com',  'customer', 'Mannerheimintie 12 A 5, 00100 Helsinki'),
-('Mikko Korhonen', 'mikko.korhonen@example.com', 'customer', 'Fredrikinkatu 34 B 12, 00100 Helsinki'),
-('Robo Admin',     'admin@robotdelivery.example', 'admin',   NULL);
+INSERT INTO `user` (user_name, user_email, user_password, user_role, user_address) VALUES
+('Aino Virtanen',  'aino.virtanen@example.com',  'salasana123', 'customer', 'Mannerheimintie 12 A 5, 00100 Helsinki'),
+('Mikko Korhonen', 'mikko.korhonen@example.com', 'salasana456', 'customer', 'Fredrikinkatu 34 B 12, 00100 Helsinki'),
+('Robo Admin',     'admin@robotdelivery.example', 'admin789',   'admin',    NULL);
 
 INSERT INTO restaurants (name, location, phone_number, restaurant_type, restaurant_description) VALUES
 ('Sushi Bento Kamppi', 'Urho Kekkosen katu 1, 00100 Helsinki', '+358 40 111 2233', 'Japanese',

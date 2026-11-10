@@ -34,6 +34,7 @@ CREATE TABLE `user` (
   user_id INT NOT NULL AUTO_INCREMENT,
   user_name VARCHAR(50) NOT NULL,
   user_email VARCHAR(100) NOT NULL UNIQUE,
+  user_password VARCHAR(100) NOT NULL,
   user_role VARCHAR(50) NOT NULL,
   user_address VARCHAR(100) NULL,
   PRIMARY KEY (user_id)
