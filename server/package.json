@@ -5,7 +5,9 @@
   "type": "module",
   "main": "src/main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/main.js",
+    "dev": "nodemon src/main.ts",
+    "build": "tsc"
   },
   "dependencies": {
     "express": "^5.3.0",
