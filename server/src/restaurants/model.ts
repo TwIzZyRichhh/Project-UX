@@ -3,7 +3,9 @@ import db from '../utils/database.ts';
 
 export const listRestaurants = async () => {
   try {
-    const [rows] = await db.query<RowDataPacket[]>('SELECT * FROM restaurants');
+    const [rows] = await db.query<RowDataPacket[]>(
+      'SELECT restaurant_id, name, location, restaurant_type, restaurant_description FROM restaurants',
+    );
     return {ok: true, data: rows};
   } catch (e) {
     console.error('error', e);
@@ -12,6 +14,19 @@ export const listRestaurants = async () => {
 };
 
 export const listRestaurant = async (id: number) => {
+  try {
+    const [rows] = await db.query<RowDataPacket[]>(
+      'SELECT * FROM restaurants WHERE restaurant_id = ?',
+      [id],
+    );
+    return {ok: true, data: rows};
+  } catch (e) {
+    console.error('error', e);
+    return {ok: false, error: e};
+  }
+};
+
+export const listRestaurantMenu = async (id: number) => {
   try {
     const [rows] = await db.query<RowDataPacket[]>(
       `
