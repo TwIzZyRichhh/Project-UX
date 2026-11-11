@@ -5,7 +5,7 @@ import express, {
   type Response
 } from 'express';
 
-import db from '../src/database.ts';
+import db from './database.ts';
 
 const app: Express = express();
 
