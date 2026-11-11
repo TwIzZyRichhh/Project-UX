@@ -2,8 +2,10 @@ import express, {type Express} from 'express';
 
 import restaurantRouter from './restaurants/routes.ts';
 import userRouter from './users/routes.ts';
-
 const app: Express = express();
+import cors from 'cors';
+
+app.use(cors());
 
 app.use(express.json());
 
