@@ -27,7 +27,7 @@ const haeOmaTieto = async (): Promise<Omit<Kayttaja, 'token'> | null> => {
   return data.user;
 };
 
-const kirjaudu = async (
+export const kirjaudu = async (
   username: string,
   password: string,
 ): Promise<Kayttaja> => {
@@ -45,18 +45,25 @@ const kirjaudu = async (
   return response.json();
 };
 
+export const paivitaLoginNappi = () => {
+  const loginBtn = document.querySelector<HTMLButtonElement>('#login-btn');
+  const registerBtn =
+    document.querySelector<HTMLButtonElement>('#register-btn');
+
+  const nimi = localStorage.getItem('user_name');
+  if (loginBtn) {
+    loginBtn.textContent = nimi ? `Kirjaudu ulos (${nimi})` : 'Kirjaudu';
+  }
+  // piilotetaan Rekisteröidy-nappi kun ollaan kirjautuneena
+  registerBtn?.classList.toggle('hidden', !!localStorage.getItem('token'));
+};
+
 export const alustaLogin = () => {
   const loginBtn = document.querySelector<HTMLButtonElement>('#login-btn');
   const loginModal = document.querySelector<HTMLDialogElement>('#login-modal');
   const loginForm = document.querySelector<HTMLFormElement>('#login-form');
   const loginVirhe =
     document.querySelector<HTMLParagraphElement>('#login-virhe');
-
-  const paivitaLoginNappi = () => {
-    if (!loginBtn) return;
-    const nimi = localStorage.getItem('user_name');
-    loginBtn.textContent = nimi ? `Kirjaudu ulos (${nimi})` : 'Kirjaudu';
-  };
 
   loginBtn?.addEventListener('click', () => {
     if (localStorage.getItem('token')) {

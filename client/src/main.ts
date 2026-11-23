@@ -1,6 +1,7 @@
 import './style.css';
 import {apiUrl} from './variables.ts';
 import {alustaLogin} from './login.ts';
+import {alustaRegister} from './register.ts';
 
 type Ravintola = {
   restaurant_id: number;
@@ -133,4 +134,5 @@ const naytaRavintolat = async () => {
 };
 
 alustaLogin();
+alustaRegister();
 naytaRavintolat();
