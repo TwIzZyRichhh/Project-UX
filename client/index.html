@@ -1,63 +1,90 @@
-<body>
-  <nav class="flex justify-center gap-50 m-5 border-gray-400 border-2 p-3 rounded-2xl">
-    <button data-page="koti" class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
-      Koti
-    </button>
-    <button data-page="ravintolat" class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
-      Ravintolat
-    </button>
-    <button data-page="meista" class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
-      Meistä
-    </button>
-  </nav>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav
+      class="flex justify-center gap-50 m-5 border-gray-400 border-2 p-3 rounded-2xl"
+    >
+      <button
+        data-page="koti"
+        class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+      >
+        Koti
+      </button>
+      <button
+        data-page="ravintolat"
+        class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+      >
+        Ravintolat
+      </button>
+      <button
+        data-page="meista"
+        class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+      >
+        Meistä
+      </button>
+    </nav>
 
-  <main>
-    <!-- Koti -->
-    <section id="page-koti" data-view class="max-w-3xl mx-auto m-10 px-5 text-center">
-      <h1 class="text-4xl font-bold mb-4">Tervetuloa!</h1>
-      <p class="text-gray-600">Löydä parhaat ravintolat yhdestä paikasta.</p>
-    </section>
+    <main>
+      <!-- Koti -->
+      <section
+        id="page-koti"
+        data-view
+        class="max-w-3xl mx-auto m-10 px-5 text-center"
+      >
+        <h1 class="text-4xl font-bold mb-4">Tervetuloa!</h1>
+        <p class="text-gray-600">Löydä parhaat ravintolat yhdestä paikasta.</p>
+      </section>
 
-    <!-- Ravintolat -->
-    <section id="page-ravintolat" data-view class="hidden">
-      <div id="ravintolat" class="grid grid-cols-3 gap-10 m-10"></div>
-    </section>
+      <!-- Ravintolat -->
+      <section id="page-ravintolat" data-view class="hidden">
+        <div id="ravintolat" class="grid grid-cols-3 gap-10 m-10"></div>
+      </section>
 
-    <!-- Meistä -->
-    <section id="page-meista" data-view class="hidden max-w-3xl mx-auto m-10 px-5">
-      <h1 class="text-4xl font-bold mb-6">Meistä</h1>
+      <!-- Meistä -->
+      <section
+        id="page-meista"
+        data-view
+        class="hidden max-w-3xl mx-auto m-10 px-5"
+      >
+        <h1 class="text-4xl font-bold mb-6">Meistä</h1>
 
-      <p class="text-gray-700 mb-4">
-        Olemme tiimi, joka haluaa helpottaa ruokapaikan valintaa. Tällä sivustolla
-        voit selata ravintoloita ja löytää sopivan paikan nopeasti.
-      </p>
+        <p class="text-gray-700 mb-4">
+          Olemme tiimi, joka haluaa helpottaa ruokapaikan valintaa. Tällä
+          sivustolla voit selata ravintoloita ja löytää sopivan paikan nopeasti.
+        </p>
 
-      <h2 class="text-2xl font-semibold mt-8 mb-3">Mikä tämä sivusto on?</h2>
-      <p class="text-gray-700 mb-4">
-        Sivusto kokoaa ravintolat yhteen paikkaan. Voit katsoa ravintoloiden tiedot
-        ja päättää, minne menet syömään.
-      </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-3">Mikä tämä sivusto on?</h2>
+        <p class="text-gray-700 mb-4">
+          Sivusto kokoaa ravintolat yhteen paikkaan. Voit katsoa ravintoloiden
+          tiedot ja päättää, minne menet syömään.
+        </p>
 
-      <h2 class="text-2xl font-semibold mt-8 mb-3">Tiimimme</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div class="border-2 border-gray-300 rounded-2xl p-4 text-center">
-          <h3 class="font-bold">David</h3>
-          <p class="text-gray-600 text-sm">Kehittäjä</p>
+        <h2 class="text-2xl font-semibold mt-8 mb-3">Tiimimme</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="border-2 border-gray-300 rounded-2xl p-4 text-center">
+            <h3 class="font-bold">David</h3>
+            <p class="text-gray-600 text-sm">Kehittäjä</p>
+          </div>
+          <div class="border-2 border-gray-300 rounded-2xl p-4 text-center">
+            <h3 class="font-bold">Nimi 2</h3>
+            <p class="text-gray-600 text-sm">Rooli</p>
+          </div>
+          <div class="border-2 border-gray-300 rounded-2xl p-4 text-center">
+            <h3 class="font-bold">Nimi 3</h3>
+            <p class="text-gray-600 text-sm">Rooli</p>
+          </div>
         </div>
-        <div class="border-2 border-gray-300 rounded-2xl p-4 text-center">
-          <h3 class="font-bold">Nimi 2</h3>
-          <p class="text-gray-600 text-sm">Rooli</p>
-        </div>
-        <div class="border-2 border-gray-300 rounded-2xl p-4 text-center">
-          <h3 class="font-bold">Nimi 3</h3>
-          <p class="text-gray-600 text-sm">Rooli</p>
-        </div>
-      </div>
 
-      <h2 class="text-2xl font-semibold mt-8 mb-3">Yhteystiedot</h2>
-      <p class="text-gray-700">sähköposti@example.com</p>
-    </section>
-  </main>
+        <h2 class="text-2xl font-semibold mt-8 mb-3">Yhteystiedot</h2>
+        <p class="text-gray-700">sähköposti@example.com</p>
+      </section>
+    </main>
 
-  <script type="module" src="/src/main.ts"></script>
-</body>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
