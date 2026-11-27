@@ -45,3 +45,25 @@ export const listRestaurantMenu = async (id: number) => {
     return {ok: false, error: e};
   }
 };
+
+export const findRestaurantByID = async (id: number) => {
+  try {
+    const [rows] = await db.query<RowDataPacket[]>(
+      `
+      SELECT restaurant_id, name, location, restaurant_type, restaurant_description
+      FROM restaurants
+      WHERE restaurant_id = ?;
+      `,
+      [id],
+    );
+
+    if (rows.length === 0) {
+      return {ok: false, error: 'Ravintolaa ei löytynyt'};
+    }
+
+    return {ok: true, data: rows[0]};
+  } catch (e) {
+    console.error('error', e);
+    return {ok: false, error: 'Database error'};
+  }
+};
