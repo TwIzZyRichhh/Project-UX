@@ -6,76 +6,204 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>client</title>
   </head>
+
   <body>
-    <nav class="flex justify-center gap-30 m-5 border-gray border-2 p-3 rounded-2xl">
-      <button class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
+    <nav
+      class="flex justify-center gap-50 m-5 border-gray-400 border-2 p-3 rounded-2xl"
+    >
+      <button
+        data-page="koti"
+        class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+      >
         Koti
       </button>
 
-      <button class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
+      <button
+        data-page="ravintolat"
+        class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+      >
         Ravintolat
       </button>
 
-      <button class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
+      <button
+        data-page="meista"
+        class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+      >
         Meistä
       </button>
 
-      <button class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md" id="login-btn">
+      <button
+        class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+        id="login-btn"
+      >
         Kirjaudu
       </button>
 
-      <button id="register-btn" class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
+      <button
+        id="register-btn"
+        class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+      >
         Rekisteröidy
       </button>
     </nav>
-
-    <dialog id="login-modal" class="m-auto rounded p-6 shadow-2xl backdrop:bg-black/50">
+    <dialog
+      id="login-modal"
+      class="m-auto rounded p-6 shadow-2xl backdrop:bg-black/50"
+    >
       <h2 class="font-bold text-xl mb-4">Kirjaudu sisään</h2>
       <form id="login-form" class="flex flex-col gap-3">
-        <input id="login-username" type="text" placeholder="Käyttäjänimi" required
-              class="border rounded p-2" />
-        <input id="login-password" type="password" placeholder="Salasana" required
-              class="border rounded p-2" />
+        <input
+          id="login-username"
+          type="text"
+          placeholder="Käyttäjänimi"
+          required
+          class="border rounded p-2"
+        />
+        <input
+          id="login-password"
+          type="password"
+          placeholder="Salasana"
+          required
+          class="border rounded p-2"
+        />
         <p id="login-virhe" class="text-red-600 text-sm"></p>
         <div class="flex gap-2 justify-end">
-          <button type="button" id="login-sulje" class="border rounded px-4 py-2">Peruuta</button>
-          <button type="submit" class="border-2 border-black bg-white rounded px-4 py-2 font-bold">
+          <button
+            type="button"
+            id="login-sulje"
+            class="border rounded px-4 py-2"
+          >
+            Peruuta
+          </button>
+          <button
+            type="submit"
+            class="border-2 border-black bg-white rounded px-4 py-2 font-bold"
+          >
             Kirjaudu
           </button>
         </div>
       </form>
     </dialog>
 
-    <dialog id="register-modal" class="m-auto rounded p-6 shadow-2xl backdrop:bg-black/50">
+    <dialog
+      id="register-modal"
+      class="m-auto rounded p-6 shadow-2xl backdrop:bg-black/50"
+    >
       <h2 class="font-bold text-xl mb-4">Rekisteröidy</h2>
       <form id="register-form" class="flex flex-col gap-3">
-        <input id="register-username" type="text" placeholder="Käyttäjänimi" required
-              class="border rounded p-2" />
-        <input id="register-email" type="email" placeholder="Sähköposti" required
-              class="border rounded p-2" />
-        <input id="register-password" type="password" placeholder="Salasana" minlength="8" required
-              class="border rounded p-2" />
+        <input
+          id="register-username"
+          type="text"
+          placeholder="Käyttäjänimi"
+          required
+          class="border rounded p-2"
+        />
+        <input
+          id="register-email"
+          type="email"
+          placeholder="Sähköposti"
+          required
+          class="border rounded p-2"
+        />
+        <input
+          id="register-password"
+          type="password"
+          placeholder="Salasana"
+          minlength="8"
+          required
+          class="border rounded p-2"
+        />
         <p id="register-virhe" class="text-red-600 text-sm"></p>
         <div class="flex gap-2 justify-end">
-          <button type="button" id="register-sulje" class="border rounded px-4 py-2">Peruuta</button>
-          <button type="submit" class="border-2 border-black bg-white rounded px-4 py-2 font-bold">
+          <button
+            type="button"
+            id="register-sulje"
+            class="border rounded px-4 py-2"
+          >
+            Peruuta
+          </button>
+          <button
+            type="submit"
+            class="border-2 border-black bg-white rounded px-4 py-2 font-bold"
+          >
             Luo tili
           </button>
         </div>
       </form>
     </dialog>
+    <main>
+      <!-- Koti -->
+      <section
+        id="page-koti"
+        data-view
+        class="max-w-3xl mx-auto m-10 px-5 text-center"
+      >
+        <h1 class="text-4xl font-bold mb-4">Tervetuloa!</h1>
+        <p class="text-gray-600">Löydä parhaat ravintolat yhdestä paikasta.</p>
+      </section>
 
-    <div id="ravintolat" class="grid grid-cols-3 gap-5 m-10"></div>
+      <!-- Ravintolat -->
+      <section id="page-ravintolat" data-view class="hidden">
+        <div id="ravintolat" class="grid grid-cols-3 gap-10 m-10"></div>
+      </section>
 
-    <dialog id="menu-modal" class="m-auto rounded-lg p-6 w-full max-w-lg backdrop:bg-black/50">
-      <div class="flex justify-between items-center mb-4">
-        <h2 id="modal-otsikko" class="font-bold text-xl"></h2>
-        <button id="modal-sulje" class="font-bold py-1 px-3 rounded-md border-2 border-black hover:bg-gray-200">
-          Sulje
-        </button>
-      </div>
-      <div id="modal-sisalto"></div>
-    </dialog>
+      <div id="ravintolat" class="grid grid-cols-3 gap-5 m-10"></div>
+
+      <dialog
+        id="menu-modal"
+        class="m-auto rounded-lg p-6 w-full max-w-lg backdrop:bg-black/50"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <h2 id="modal-otsikko" class="font-bold text-xl"></h2>
+          <button
+            id="modal-sulje"
+            class="font-bold py-1 px-3 rounded-md border-2 border-black hover:bg-gray-200"
+          >
+            Sulje
+          </button>
+        </div>
+        <div id="modal-sisalto"></div>
+      </dialog>
+
+      <!-- Meistä -->
+      <section
+        id="page-meista"
+        data-view
+        class="hidden max-w-3xl mx-auto m-10 px-5"
+      >
+        <h1 class="text-4xl font-bold mb-6">Meistä</h1>
+
+        <p class="text-gray-700 mb-4">
+          Olemme tiimi, joka haluaa helpottaa ruokapaikan valintaa. Tällä
+          sivustolla voit selata ravintoloita ja löytää sopivan paikan nopeasti.
+        </p>
+
+        <h2 class="text-2xl font-semibold mt-8 mb-3">Mikä tämä sivusto on?</h2>
+        <p class="text-gray-700 mb-4">
+          Sivusto kokoaa ravintolat yhteen paikkaan. Voit katsoa ravintoloiden
+          tiedot ja päättää, minne menet syömään.
+        </p>
+
+        <h2 class="text-2xl font-semibold mt-8 mb-3">Tiimimme</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="border-2 border-gray-300 rounded-2xl p-4 text-center">
+            <h3 class="font-bold">David</h3>
+            <p class="text-gray-600 text-sm">Kehittäjä</p>
+          </div>
+          <div class="border-2 border-gray-300 rounded-2xl p-4 text-center">
+            <h3 class="font-bold">Nimi 2</h3>
+            <p class="text-gray-600 text-sm">Rooli</p>
+          </div>
+          <div class="border-2 border-gray-300 rounded-2xl p-4 text-center">
+            <h3 class="font-bold">Nimi 3</h3>
+            <p class="text-gray-600 text-sm">Rooli</p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold mt-8 mb-3">Yhteystiedot</h2>
+        <p class="text-gray-700">sähköposti@example.com</p>
+      </section>
+    </main>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

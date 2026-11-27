@@ -136,3 +136,32 @@ const naytaRavintolat = async () => {
 alustaLogin();
 alustaRegister();
 naytaRavintolat();
+// ---------- Sivujen vaihto (Koti / Ravintolat / Meistä) ----------
+
+const sivut = ['koti', 'ravintolat', 'meista'];
+
+const naytaSivu = () => {
+  let sivu = location.hash.slice(1);
+  if (!sivut.includes(sivu)) sivu = 'koti';
+
+  document.querySelectorAll<HTMLElement>('[data-view]').forEach((osio) => {
+    osio.classList.toggle('hidden', osio.id !== `page-${sivu}`);
+  });
+
+  document
+    .querySelectorAll<HTMLButtonElement>('nav button')
+    .forEach((nappi) => {
+      const aktiivinen = nappi.dataset.page === sivu;
+      nappi.classList.toggle('bg-blue-700', aktiivinen);
+      nappi.classList.toggle('bg-gray-400', !aktiivinen);
+    });
+};
+
+document.querySelectorAll<HTMLButtonElement>('nav button').forEach((nappi) => {
+  nappi.addEventListener('click', () => {
+    location.hash = nappi.dataset.page!;
+  });
+});
+
+window.addEventListener('hashchange', naytaSivu);
+naytaSivu();
