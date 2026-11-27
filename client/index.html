@@ -28,8 +28,106 @@
       >
         Meistä
       </button>
-    </nav>
 
+      <button
+        class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+        id="login-btn"
+      >
+        Kirjaudu
+      </button>
+
+      <button
+        id="register-btn"
+        class="bg-gray-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+      >
+        Rekisteröidy
+      </button>
+    </nav>
+    <dialog
+      id="login-modal"
+      class="m-auto rounded p-6 shadow-2xl backdrop:bg-black/50"
+    >
+      <h2 class="font-bold text-xl mb-4">Kirjaudu sisään</h2>
+      <form id="login-form" class="flex flex-col gap-3">
+        <input
+          id="login-username"
+          type="text"
+          placeholder="Käyttäjänimi"
+          required
+          class="border rounded p-2"
+        />
+        <input
+          id="login-password"
+          type="password"
+          placeholder="Salasana"
+          required
+          class="border rounded p-2"
+        />
+        <p id="login-virhe" class="text-red-600 text-sm"></p>
+        <div class="flex gap-2 justify-end">
+          <button
+            type="button"
+            id="login-sulje"
+            class="border rounded px-4 py-2"
+          >
+            Peruuta
+          </button>
+          <button
+            type="submit"
+            class="border-2 border-black bg-white rounded px-4 py-2 font-bold"
+          >
+            Kirjaudu
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog
+      id="register-modal"
+      class="m-auto rounded p-6 shadow-2xl backdrop:bg-black/50"
+    >
+      <h2 class="font-bold text-xl mb-4">Rekisteröidy</h2>
+      <form id="register-form" class="flex flex-col gap-3">
+        <input
+          id="register-username"
+          type="text"
+          placeholder="Käyttäjänimi"
+          required
+          class="border rounded p-2"
+        />
+        <input
+          id="register-email"
+          type="email"
+          placeholder="Sähköposti"
+          required
+          class="border rounded p-2"
+        />
+        <input
+          id="register-password"
+          type="password"
+          placeholder="Salasana"
+          minlength="8"
+          required
+          class="border rounded p-2"
+        />
+        <p id="register-virhe" class="text-red-600 text-sm"></p>
+        <div class="flex gap-2 justify-end">
+          <button
+            type="button"
+            id="register-sulje"
+            class="border rounded px-4 py-2"
+          >
+            Peruuta
+          </button>
+          <button
+            type="submit"
+            class="border-2 border-black bg-white rounded px-4 py-2 font-bold"
+          >
+            Luo tili
+          </button>
+        </div>
+      </form>
+    </dialog>
     <main>
       <!-- Koti -->
       <section
@@ -45,6 +143,24 @@
       <section id="page-ravintolat" data-view class="hidden">
         <div id="ravintolat" class="grid grid-cols-3 gap-10 m-10"></div>
       </section>
+
+      <div id="ravintolat" class="grid grid-cols-3 gap-5 m-10"></div>
+
+      <dialog
+        id="menu-modal"
+        class="m-auto rounded-lg p-6 w-full max-w-lg backdrop:bg-black/50"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <h2 id="modal-otsikko" class="font-bold text-xl"></h2>
+          <button
+            id="modal-sulje"
+            class="font-bold py-1 px-3 rounded-md border-2 border-black hover:bg-gray-200"
+          >
+            Sulje
+          </button>
+        </div>
+        <div id="modal-sisalto"></div>
+      </dialog>
 
       <!-- Meistä -->
       <section
